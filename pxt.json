@@ -20,9 +20,7 @@
         "test.ts"
     ],
     "public": true
-}
 
-{
     "name": "Huskylens",
     "version": "2.0.3",
     "description": "",
@@ -45,4 +43,5 @@
         "microbit"
     ],
     "preferredEditor": "tsprj"
+
 }
