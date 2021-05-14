@@ -1,40 +1,37 @@
 ﻿/*
-Copyright (C): 2010-2019, Shenzhen Yahboom Tech
-modified from liusen
-load dependency
-"mbit": "file:../pxt-mbit"
+Copyright (C): 2021-2030, The Chinese University of Hong Kong.
 */
 
 
 
 //% color="#C814B8" weight=25 icon="\uf1d4"
-namespace mbit_显示类 {
+namespace CUHK_JC_iCar_Display {
     
     export enum enColor {
 
-        //% blockId="OFF" block="灭"
+        //% blockId="OFF" block="Off"
         OFF = 0,
-        //% blockId="Red" block="红色"
+        //% blockId="Red" block="Red"
         Red,
-        //% blockId="Green" block="绿色"
+        //% blockId="Green" block="Green"
         Green,
-        //% blockId="Blue" block="蓝色"
+        //% blockId="Blue" block="Blue"
         Blue,
-        //% blockId="White" block="白色"
+        //% blockId="White" block="White"
         White,
-        //% blockId="Cyan" block="青色"
+        //% blockId="Cyan" block="Cyan"
         Cyan,
-        //% blockId="Pinkish" block="品红"
+        //% blockId="Pinkish" block="Pinkish"
         Pinkish,
-        //% blockId="Yellow" block="黄色"
+        //% blockId="Yellow" block="Yellow"
         Yellow,
 
     }
     export enum enLED1 {
         
-        //% blockId="OFF" block="灭"
+        //% blockId="OFF" block="Off"
         OFF = 0,
-        //% blockId="ON" block="亮"
+        //% blockId="ON" block="On"
         ON =1
     }
 
@@ -157,23 +154,23 @@ namespace mbit_显示类 {
    
 }
 /*****************************************************************************************************************************************
- *  传感器类 ***************************************************************************************************************************** 
+ *  Sensors  ***************************************************************************************************************************** 
  ****************************************************************************************************************************************/
 
 //% color="#87CEEB" weight=24 icon="\uf1b6"
-namespace mbit_传感器类 {
+namespace CUHK_JC_iCar_Sensors {
 
     export enum enVoice {
-        //% blockId="Voice" block="有声音"
+        //% blockId="Voice" block="Voice"
         Voice = 0,
-        //% blockId="NoVoice" block="无声音"
+        //% blockId="NoVoice" block="NoVoice"
         NoVoice = 1
     }
 
     export enum enIR {
-        //% blockId="Get" block="检测到"
+        //% blockId="Get" block="Detected"
         Get = 0,
-        //% blockId="NoVoice" block="未检测"
+        //% blockId="NoVoice" block="Undetected"
         NoGet = 1
     }
     
@@ -203,7 +200,7 @@ namespace mbit_传感器类 {
             control.waitMicros(13);
         }
     }
-    //% blockId=mbit_IR_Sensor block="IR_Sensor|pin %pin| |%value|障碍物"
+    //% blockId=mbit_IR_Sensor block="IR_Sensor|pin %pin| |%value|blockade"
     //% weight=100
     //% blockGap=10
     //% color="#87CEEB"
@@ -261,37 +258,37 @@ namespace mbit_传感器类 {
 }
 
 /*****************************************************************************************************************************************
- *  输入类 *****************************************************************************************************************************
+ *  Inputs *****************************************************************************************************************************
  ****************************************************************************************************************************************/
 
 //% color="#808080" weight=23 icon="\uf11c"
-namespace mbit_输入类 {
+namespace CUHK_JC_iCar_Inputs {
 
     export enum enRocker {
-        //% blockId="Nostate" block="无"
+        //% blockId="Nostate" block="No"
         Nostate = 0,
-        //% blockId="Up" block="上"
+        //% blockId="Up" block="Up"
         Up,
-        //% blockId="Down" block="下"
+        //% blockId="Down" block="Down"
         Down,
-        //% blockId="Left" block="左"
+        //% blockId="Left" block="Left"
         Left,
-        //% blockId="Right" block="右"
+        //% blockId="Right" block="Right"
         Right,
-        //% blockId="Press" block="按下"
+        //% blockId="Press" block="Pressed"
         Press
     }
 
     export enum enTouch {
-        //% blockId="NoTouch" block="未触摸"
+        //% blockId="NoTouch" block="Untouched"
         NoTouch = 0,
-        //% blockId="Touch" block="触摸"
+        //% blockId="Touch" block="Touched"
         Touch = 1
     }
     export enum enButton {
-        //% blockId="Press" block="按下"
+        //% blockId="Press" block="Pressed"
         Press = 0,
-        //% blockId="Realse" block="松开"
+        //% blockId="Realse" block="Released"
         Realse = 1
     }
 
@@ -324,7 +321,7 @@ namespace mbit_输入类 {
         let z = pins.digitalReadPin(pin3);
         let now_state = enRocker.Nostate;
 
-        if (x < 100) // 上
+        if (x < 100) // Up
         {
 
             now_state = enRocker.Up;
@@ -335,13 +332,13 @@ namespace mbit_输入类 {
 
             now_state = enRocker.Down;
         }
-        else  // 左右
+        else  // LeftRight
         {
-            if (y < 100) //右
+            if (y < 100) //Right
             {
                 now_state = enRocker.Right;
             }
-            else if (y > 700) //左
+            else if (y > 700) //Left
             {
                 now_state = enRocker.Left;
             }
@@ -374,16 +371,16 @@ namespace mbit_输入类 {
 }
 
 /*****************************************************************************************************************************************
- *    音乐类 *****************************************************************************************************************************
+ *    Sounds *****************************************************************************************************************************
  ****************************************************************************************************************************************/
 
 //% color="#D2691E" weight=22 icon="\uf001"
-namespace mbit_音乐类 {
+namespace CUHK_JC_iCar_Sounds {
     export enum enBuzzer {
 
-        //% blockId="NoBeep" block="不响"
+        //% blockId="NoBeep" block="Unbeeped"
         NoBeep = 0,
-        //% blockId="Beep" block="响"
+        //% blockId="Beep" block="Beeped"
         Beep
     }
 
@@ -403,11 +400,11 @@ namespace mbit_音乐类 {
 }
 
 /*****************************************************************************************************************************************
- *    电机类 *****************************************************************************************************************************
+ *    Motors *****************************************************************************************************************************
  ****************************************************************************************************************************************/
 
 //% color="#0000CD" weight=21 icon="\uf185"
-namespace mbit_电机类 {
+namespace CUHK_JC_iCar_Motors {
 
     //% blockId=mbit_Fan block="Fan|pin %pin|speed %value"
     //% weight=100
@@ -436,7 +433,7 @@ namespace mbit_电机类 {
 }
 
 //% color="#006400" weight=20 icon="\uf1b9"
-namespace mbit_小车类 {
+namespace CUHK_JC_iCar_Vehicle {
 
     const PCA9685_ADD = 0x41
     const MODE1 = 0x00
@@ -462,21 +459,21 @@ namespace mbit_小车类 {
 
     export enum enColor {
 
-        //% blockId="OFF" block="灭"
+        //% blockId="OFF" block="Off"
         OFF = 0,
-        //% blockId="Red" block="红色"
+        //% blockId="Red" block="Red"
         Red,
-        //% blockId="Green" block="绿色"
+        //% blockId="Green" block="Green"
         Green,
-        //% blockId="Blue" block="蓝色"
+        //% blockId="Blue" block="Blue"
         Blue,
-        //% blockId="White" block="白色"
+        //% blockId="White" block="White"
         White,
-        //% blockId="Cyan" block="青色"
+        //% blockId="Cyan" block="Cyan"
         Cyan,
-        //% blockId="Pinkish" block="品红"
+        //% blockId="Pinkish" block="Pinkish"
         Pinkish,
-        //% blockId="Yellow" block="黄色"
+        //% blockId="Yellow" block="Yellow"
         Yellow,
 
     }
@@ -506,24 +503,24 @@ namespace mbit_小车类 {
     }
     export enum enPos {
 
-        //% blockId="LeftState" block="左边状态"
+        //% blockId="LeftState" block="LeftStatus"
         LeftState = 0,
-        //% blockId="RightState" block="右边状态"
+        //% blockId="RightState" block="RightStatus"
         RightState = 1
     }
 
     export enum enLineState {
-        //% blockId="White" block="白线"
+        //% blockId="White" block="WhiteLine"
         White = 0,
-        //% blockId="Black" block="黑线"
+        //% blockId="Black" block="BlackLine"
         Black = 1
 
     }
     
     export enum enAvoidState {
-        //% blockId="OBSTACLE" block="有障碍物"
+        //% blockId="OBSTACLE" block="Blocked"
         OBSTACLE = 0,
-        //% blockId="NOOBSTACLE" block="无障碍物"
+        //% blockId="NOOBSTACLE" block="Unblocked"
         NOOBSTACLE = 1
 
     }
@@ -536,19 +533,19 @@ namespace mbit_小车类 {
         S3
     }
     export enum CarState {
-        //% blockId="Car_Run" block="前行"
+        //% blockId="Car_Run" block="Forward"
         Car_Run = 1,
-        //% blockId="Car_Back" block="后退"
+        //% blockId="Car_Back" block="Backward"
         Car_Back = 2,
-        //% blockId="Car_Left" block="左转"
+        //% blockId="Car_Left" block="TurnLeft"
         Car_Left = 3,
-        //% blockId="Car_Right" block="右转"
+        //% blockId="Car_Right" block="TurnRight"
         Car_Right = 4,
-        //% blockId="Car_Stop" block="停止"
+        //% blockId="Car_Stop" block="Stop"
         Car_Stop = 5,
-        //% blockId="Car_SpinLeft" block="原地左旋"
+        //% blockId="Car_SpinLeft" block="SpinLeft"
         Car_SpinLeft = 6,
-        //% blockId="Car_SpinRight" block="原地右旋"
+        //% blockId="Car_SpinRight" block="SpinRight"
         Car_SpinRight = 7
     }
 
@@ -626,9 +623,9 @@ namespace mbit_小车类 {
         setPwm(15, 0, speed2);
         setPwm(14, 0, 0);
         //pins.digitalWritePin(DigitalPin.P16, 1);
-       // pins.analogWritePin(AnalogPin.P1, 1023-speed); //速度控制
+       // pins.analogWritePin(AnalogPin.P1, 1023-speed); //SpeedControl
 
-       // pins.analogWritePin(AnalogPin.P0, speed);//速度控制
+       // pins.analogWritePin(AnalogPin.P0, speed);//SpeedControl
        // pins.digitalWritePin(DigitalPin.P8, 0);
     }
 
@@ -649,9 +646,9 @@ namespace mbit_小车类 {
         setPwm(14, 0, speed2);
 
         //pins.digitalWritePin(DigitalPin.P16, 0);
-        //pins.analogWritePin(AnalogPin.P1, speed); //速度控制
+        //pins.analogWritePin(AnalogPin.P1, speed); //SpeedControl
 
-        //pins.analogWritePin(AnalogPin.P0, 1023 - speed);//速度控制
+        //pins.analogWritePin(AnalogPin.P0, 1023 - speed);//SpeedControl
         //pins.digitalWritePin(DigitalPin.P8, 1);
     }
 

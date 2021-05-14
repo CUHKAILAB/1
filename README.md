@@ -1,4 +1,4 @@
-# mbit
+# CUHK_JC_iCAR
 
 Extension for CUHK_JC_iCAR
 
