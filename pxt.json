@@ -21,3 +21,28 @@
     ],
     "public": true
 }
+
+{
+    "name": "Huskylens",
+    "version": "2.0.3",
+    "description": "",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "huskylens.ts",
+        "_locales/zh-cn/Huskylens-strings.json",
+        "i2c.cpp",
+        "_locales/zh-tw/Huskylens-strings.json",
+        "shims.d.ts",
+        "enums.d.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
+}
